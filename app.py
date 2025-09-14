@@ -24,7 +24,7 @@ def Submit():
 
         f = open("name.txt", "r")
         specie = f.read().split(",")
-        choose = random.randint(0,len(specie))
+        choose = random.randint(0,len(specie)-1)
 
         if rand % 2 == 0:
             sex = "ชาย"
@@ -64,5 +64,6 @@ btn.pack()
 
 prod = Label(text="")
 prod.pack(pady=10)
+
 
 root.mainloop()
