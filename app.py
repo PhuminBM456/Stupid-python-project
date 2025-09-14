@@ -22,7 +22,7 @@ def Submit():
     else:
         sex = False
 
-        f = open("name.txt", "r")
+        f = open("species.txt", "r")
         specie = f.read().split(",")
         choose = random.randint(0,len(specie)-1)
 
@@ -67,3 +67,4 @@ prod.pack(pady=10)
 
 
 root.mainloop()
+
