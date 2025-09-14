@@ -23,15 +23,17 @@ def Submit():
         sex = False
 
         f = open("species.txt", "r")
-        specie = f.read().split(",")
-        choose = random.randint(0,len(specie)-1)
+        spc = f.read()
+        covert_spc = spc.strip()
+        split_spc = covert_spc.split(",")
+        rand_spc = random.randint(0,len(split_spc)-1)
 
         if rand % 2 == 0:
             sex = "ชาย"
         else:
             sex = "หญิง"
 
-        prod.config(text="สเปคของคุณ คือ "+specie[choose]+" เพศ"+sex+" อายุ"+str(rand)+"ปี",fg="blue",font=("Arial", 25),bg="yellow")
+        prod.config(text="สเปคของคุณ คือ "+split_spc[rand_spc]+" เพศ"+sex+" อายุ"+str(rand)+"ปี",fg="blue",font=("Arial", 25),bg="yellow")
 
         # prod.config(text="สเปคของคุณ คือ "+t2+" เพศ"+sex+" อายุ"+str(rand)+"ปี",fg="blue",font=("Arial", 25),bg="yellow")
 
@@ -67,4 +69,5 @@ prod.pack(pady=10)
 
 
 root.mainloop()
+
 
